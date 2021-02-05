@@ -52,10 +52,10 @@ sys_cl = ss(Ac,Bc,Cc,Dc,'statename',states,'inputname',inputs,'outputname',outpu
 t = 0:0.01:5;
 r =0.2*ones(size(t));
 [y,t,x]=lsim(sys_cl,r,t);
-[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
-set(get(AX(1),'Ylabel'),'String','cart position (m)')
-set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
-title('Step Response with LQR Control')
+%[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
+%set(get(AX(1),'Ylabel'),'String','cart position (m)')
+%set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
+%title('Step Response with LQR Control')
 
 %PARTE 2 DE LQR
 Q = C'*C;
@@ -79,10 +79,10 @@ sys_cl = ss(Ac,Bc,Cc,Dc,'statename',states,'inputname',inputs,'outputname',outpu
 t = 0:0.01:5;
 r =0.2*ones(size(t));
 [y,t,x]=lsim(sys_cl,r,t);
-[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
-set(get(AX(1),'Ylabel'),'String','cart position (m)')
-set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
-title('Step Response with LQR Control')
+%[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
+%set(get(AX(1),'Ylabel'),'String','cart position (m)')
+%set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
+%title('Step Response with LQR Control')
 
 %Agregar Compensación K en la retro de estados
 Cn = [1 0 0 0];
@@ -96,10 +96,10 @@ sys_cl = ss(Ac,Bc*Nbar,Cc,Dc,'statename',states,'inputname',inputs,'outputname',
 t = 0:0.01:5;
 r =0.2*ones(size(t));
 [y,t,x]=lsim(sys_cl,r,t);
-[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
-set(get(AX(1),'Ylabel'),'String','cart position (m)')
-set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
-title('Step Response with Precompensation and LQR Control')
+%[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
+%set(get(AX(1),'Ylabel'),'String','cart position (m)')
+%set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
+%title('Step Response with Precompensation and LQR Control')
 
 %Observabilidad del observador
 ob = obsv(sys_ss);
@@ -124,11 +124,16 @@ outputs = {'x'; 'phi'};
 
 sys_est_cl = ss(Ace,Bce,Cce,Dce,'statename',states,'inputname',inputs,'outputname',outputs);
 
-figure(5)
+%figure(5)
 t = 0:0.01:5;
 r = 0.2*ones(size(t));
 [y,t,x]=lsim(sys_est_cl,r,t);
-[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
-set(get(AX(1),'Ylabel'),'String','cart position (m)')
-set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
-title('Step Response with Observer-Based State-Feedback Control')
+
+posicion_carrito = y(:,1);
+angulo_pendulo = rad2deg(y(:,2));
+velocidad_carrito = x(:,2);
+velocidad_pendulo = x(:,4);
+%[AX,H1,H2] = plotyy(t,y(:,1),t,y(:,2),'plot');
+%set(get(AX(1),'Ylabel'),'String','cart position (m)')
+%set(get(AX(2),'Ylabel'),'String','pendulum angle (radians)')
+%title('Step Response with Observer-Based State-Feedback Control')
