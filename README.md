@@ -9,3 +9,9 @@ The response of each variable is shown in a graphic in each tab:
 - Velocity of the pendulum
 
 Finally, all the data can be stored in a CSV file, all it needs is a path file and a filename.
+
+Images of the GUI working:
+<img src="Media/position.png" width=500/>
+<img src="Media/velocity.png" width=500/>
+<img src="Media/path.png" width=500/>
+<img src="Media/data.png" width=500/>
