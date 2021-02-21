@@ -10,8 +10,8 @@ The response of each variable is shown in a graphic in each tab:
 
 Finally, all the data can be stored in a CSV file, all it needs is a path file and a filename.
 
-Images of the GUI working:
-<img src="Media/position.png" width=500/>
-<img src="Media/velocity.png" width=500/>
-<img src="Media/path.png" width=500/>
-<img src="Media/data.png" width=500/>
+Images of the GUI working:<br>
+<img src="https://github.com/rolandoibl/pendulo_invertido_dm/blob/main/Media/position.PNG" width="500"/><br>
+<img src="https://github.com/rolandoibl/pendulo_invertido_dm/blob/main/Media/velocity.PNG" width="500"/><br>
+<img src="https://github.com/rolandoibl/pendulo_invertido_dm/blob/main/Media/path.PNG" width="500"/><br>
+<img src="https://github.com/rolandoibl/pendulo_invertido_dm/blob/main/Media/data.PNG" width="500"/>
